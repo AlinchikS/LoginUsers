@@ -57,7 +57,6 @@ namespace LoginUsers
                 {
                     MessageBox.Show("Вы менеджер");
                     Visibility = Visibility.Hidden;
-
                     tableware.btnAddProducts.Visibility = Visibility.Collapsed;
                     tableware.btnEditProducts.Visibility = Visibility.Collapsed;
                     tableware.btnDeleteProducts.Visibility = Visibility.Collapsed;
@@ -148,9 +147,10 @@ namespace LoginUsers
         {
             MessageBox.Show("Вы вошли как гость");
             Visibility = Visibility.Hidden;
-            tableware.dgProducts.IsEnabled = false;
+            tableware.btnAddProducts.Visibility = Visibility.Collapsed;
+            tableware.btnEditProducts.Visibility = Visibility.Collapsed;
+            tableware.btnDeleteProducts.Visibility = Visibility.Collapsed;
             tableware.ShowDialog();
-            Visibility = Visibility.Visible;
         }
     }
 }

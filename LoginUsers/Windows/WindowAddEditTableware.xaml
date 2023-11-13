@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginUsers.Windows"
         mc:Ignorable="d"
-        Title="WindowAddEditTableware" Height="500" Width="922">
+        Title="Добавление и редактирование товаров" Height="500" Width="922">
     <Grid>
         <Label Content='Товары' HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
         <StackPanel Orientation="Horizontal">

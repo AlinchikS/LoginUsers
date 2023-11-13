@@ -5,13 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginUsers.Windows"
         mc:Ignorable="d"
-        Title="WindowTableware" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Список товаров" Height="450" Width="1136" Loaded="Window_Loaded">
     <Grid>
         <StackPanel Orientation="Vertical">
             <DockPanel Margin="0,10,0,10">
                 <Button Name="btnAddProducts" Content="Добавить" Click="btnAddProducts_Click" Margin="5" Height="20" Width="64"/>
                 <Button Name="btnEditProducts" Content="Редактировать" Click="btnEditProducts_Click" Margin="5" Height="20" Width="97"/>
                 <Button Name="btnDeleteProducts" Content="Удалить" Click="btnDeleteProducts_Click" Margin="5" Height="20" Width="74"/>
+                <Label Content="Поиск:"/>
+                <TextBox x:Name="tbProductsSearch"  Margin="5" Height="20" Width="200" TextChanged="tbProductsSearch_TextChanged" />
+                <ComboBox x:Name="cmbProductsSorteed" Margin="5" Height="20" Width="180" SelectionChanged="cmbProductsSorteed_SelectionChanged">
+                    <ComboBoxItem>По стоимости(возрастание)</ComboBoxItem>
+                    <ComboBoxItem>По стоимости(убывание)</ComboBoxItem>
+                </ComboBox>
+                <ComboBox x:Name="cmbProductsFilter" Margin="5" Height="20" Width="130" SelectionChanged="cmbProductsFilter_SelectionChanged">
+                    <ComboBoxItem IsSelected="True">Все произодители</ComboBoxItem>
+                    <ComboBoxItem>Davinci</ComboBoxItem>
+                    <ComboBoxItem>Attribute</ComboBoxItem>
+                    <ComboBoxItem>Doria</ComboBoxItem>
+                    <ComboBoxItem>Alaska</ComboBoxItem>
+                    <ComboBoxItem>Apollo</ComboBoxItem>
+                    <ComboBoxItem>Smart Home</ComboBoxItem>
+                    <ComboBoxItem>Alaska</ComboBoxItem>
+                    <ComboBoxItem>Alaska</ComboBoxItem>
+                </ComboBox>
                 <Label Content="" x:Name="lbUsers" HorizontalAlignment="Right"  Margin="5"/>
             </DockPanel>
             <DataGrid Name="dgProducts" AutoGenerateColumns="True" Height="382"/>

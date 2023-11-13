@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginUsers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="412" Width="382" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Height="412" Width="382" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
             <Label Content="Введите логин" FontSize="20" Width="364"/>

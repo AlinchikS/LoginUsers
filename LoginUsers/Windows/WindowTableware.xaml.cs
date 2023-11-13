@@ -72,5 +72,67 @@ namespace LoginUsers.Windows
             else
                 lbUsers.Content = "Гость";
         }
+
+        private void tbProductsSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                string productsSearch = tbProductsSearch.Text;
+                List<Products> products = App.Dbtableware.Products.Where(product => product.Name.Contains(productsSearch) ||
+                product.Articul.Contains(productsSearch) ||
+                product.Supplier.Contains(productsSearch) ||
+                product.Description.Contains(productsSearch) ||
+                product.Category.Contains(productsSearch) ||
+                product.Manufacturer.Contains(productsSearch)).ToList();
+
+                dgProducts.ItemsSource = null;
+                dgProducts.ItemsSource = products;
+            }
+            catch { }
+        }
+
+        private void cmbProductsSorteed_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                int ind = cmbProductsSorteed.SelectedIndex;
+                List<Products> products = App.Dbtableware.Products.ToList();
+                if (ind == 0)
+                    products = App.Dbtableware.Products.OrderBy(product => product.Cost).ToList();
+                if (ind == 1)
+                    products = App.Dbtableware.Products.OrderByDescending(product => product.Cost).ToList();
+                dgProducts.ItemsSource = null;
+                dgProducts.ItemsSource = products;
+            }
+            catch { }
+        }
+
+        private void cmbProductsFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                List<Products> products = App.Dbtableware.Products.ToList();
+                if (cmbProductsFilter.SelectedIndex == 0)
+                {
+                    dgProducts.ItemsSource = null;
+                    dgProducts.ItemsSource = App.Dbtableware.Products.ToList();
+                }
+                else
+                {
+                    string selectedManufacturer = ((ComboBoxItem)cmbProductsFilter.SelectedItem).Content.ToString();
+                    List<Products> filteredProducts = new List<Products>();
+                    foreach (Products product in products)
+                    {
+                        if (product.Manufacturer == selectedManufacturer)
+                        {
+                            filteredProducts.Add(product);
+                        }
+                    }
+                    dgProducts.ItemsSource = null;
+                    dgProducts.ItemsSource = filteredProducts;
+                }
+            }
+            catch { }
+        }
     }
 }
