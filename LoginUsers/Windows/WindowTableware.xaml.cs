@@ -19,10 +19,14 @@ namespace LoginUsers.Windows
     /// </summary>
     public partial class WindowTableware : Window
     {
+        int rowCountAll;
+        int rowCount;
         public WindowTableware()
         {
             InitializeComponent();
             dgProducts.ItemsSource = App.Dbtableware.Products.ToList();
+            rowCountAll = dgProducts.Items.Count;
+            lbCountRow.Content = rowCountAll - 1;
         }
 
         private void btnAddProducts_Click(object sender, RoutedEventArgs e)
@@ -87,6 +91,10 @@ namespace LoginUsers.Windows
 
                 dgProducts.ItemsSource = null;
                 dgProducts.ItemsSource = products;
+
+                rowCount = dgProducts.Items.Count;
+                lbCountRow.Content = $"{rowCount - 1} из {rowCountAll - 1}";
+
             }
             catch { }
         }
@@ -130,6 +138,8 @@ namespace LoginUsers.Windows
                     }
                     dgProducts.ItemsSource = null;
                     dgProducts.ItemsSource = filteredProducts;
+                    rowCount = dgProducts.Items.Count;
+                    lbCountRow.Content = $"{rowCount - 1} из {rowCountAll - 1}";
                 }
             }
             catch { }

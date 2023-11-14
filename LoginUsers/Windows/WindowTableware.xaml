@@ -28,6 +28,7 @@
                     <ComboBoxItem>Smart Home</ComboBoxItem>
                     <ComboBoxItem>Mayer &amp; Boch</ComboBoxItem>
                 </ComboBox>
+                <Label Content="" x:Name="lbCountRow" Margin="5"/>
                 <Label Content="" x:Name="lbUsers" HorizontalAlignment="Right"  Margin="5"/>
             </DockPanel>
             <DataGrid Name="dgProducts" AutoGenerateColumns="True" Height="382"/>
