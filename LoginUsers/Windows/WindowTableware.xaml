@@ -12,7 +12,7 @@
                 <Button Name="btnAddProducts" Content="Добавить" Click="btnAddProducts_Click" Margin="5" Height="20" Width="64"/>
                 <Button Name="btnEditProducts" Content="Редактировать" Click="btnEditProducts_Click" Margin="5" Height="20" Width="97"/>
                 <Button Name="btnDeleteProducts" Content="Удалить" Click="btnDeleteProducts_Click" Margin="5" Height="20" Width="74"/>
-                <Label Content="Поиск:"/>
+                <Label Content="Поиск:" Margin="5"/>
                 <TextBox x:Name="tbProductsSearch"  Margin="5" Height="20" Width="200" TextChanged="tbProductsSearch_TextChanged" />
                 <ComboBox x:Name="cmbProductsSorteed" Margin="5" Height="20" Width="180" SelectionChanged="cmbProductsSorteed_SelectionChanged">
                     <ComboBoxItem>По стоимости(возрастание)</ComboBoxItem>
@@ -26,8 +26,7 @@
                     <ComboBoxItem>Alaska</ComboBoxItem>
                     <ComboBoxItem>Apollo</ComboBoxItem>
                     <ComboBoxItem>Smart Home</ComboBoxItem>
-                    <ComboBoxItem>Alaska</ComboBoxItem>
-                    <ComboBoxItem>Alaska</ComboBoxItem>
+                    <ComboBoxItem>Mayer &amp; Boch</ComboBoxItem>
                 </ComboBox>
                 <Label Content="" x:Name="lbUsers" HorizontalAlignment="Right"  Margin="5"/>
             </DockPanel>
